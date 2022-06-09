@@ -1,0 +1,120 @@
+:root{
+    --c-bg: #fff;
+    --c-text: #fff;
+    --c-icon-h: #000;
+    --c-bg-cb: #000;
+    --c-white: #fff;
+    --c-black: #000;
+    transition: 0.5s;
+}
+:root .dark-theme{
+    --c-bg: #000;
+    --c-text: #000;
+    --c-bg-cb: #fff;
+    --c-icon-h: #fff;
+    --c-white: #fff;
+    --c-black: #000;
+    transition: 0.5s;
+}
+@media (prefers-color-scheme: dark) {
+    :root .light-theme{
+        --c-bg: #fff;
+        --c-text: #fff;
+        --c-icon-h: #000;
+        --c-bg-cb: #000;
+        --c-white: #fff;
+        --c-black: #000;
+        transition: 0.5s;
+    }
+    :root{
+        --c-bg: #000;
+        --c-text: #000;
+        --c-bg-cb: #fff;
+        --c-icon-h: #fff;
+        --c-white: #fff;
+        --c-black: #000;
+        transition: 0.5s;
+    }
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "josefin Sans", sans-serif;
+    background-color: var(--c-bg);
+}
+.button-moon{
+    position: fixed;
+    background: var(--c-bg);
+    border: none;
+    transition: 0.5s;
+    height: 40px;
+    width: 40px;
+    right: 40px;
+    top: 40px;
+}
+.icon-tabler-moon{
+    stroke: var(--c-black);
+    fill: var(--c-white);
+    transition: 1s;
+}
+a{
+    text-decoration: none;
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 400px;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+.card:hover .card-front{
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-back{
+    transform: rotateY(0deg);
+}
+.card-front{
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/michael-jackson.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    position: absolute;
+    background-color: var(--c-bg);
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: 0.5s;
+}
+.card-back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--c-bg-cb);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+    color: var(--c-text);
+    text-align: center;
+}
+.card-back h2{
+    margin: 55% auto 40% auto;
+    font-size: 26px;
+}
+.card-back .icon{
+    height: 30px;
+    width: 30px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    line-height: 20px;
+    stroke: var(--c-text);
+}
+.card-back .icon:hover{
+    stroke: var(--c-icon-h);
+    background-color: var(--c-text);
+}
